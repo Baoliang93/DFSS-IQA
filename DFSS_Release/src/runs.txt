@@ -1,0 +1,7 @@
+CUDA_VISIBLE_DEVICES=0 python iqaScrach.py --list-dir='../sci_scripts/siqad-scripts-6-2-2/' --pro=9 --resume='../models/siqad/checkpoint_latest.pkl' --dataset='IQA'
+
+CUDA_VISIBLE_DEVICES=0 python iqaScrach.py --list-dir='../sci_scripts/scid-scripts-6-2-2/' --pro=9 --resume='../models/scid/checkpoint_latest.pkl' --dataset='SCID' --n-dtype=46
+
+CUDA_VISIBLE_DEVICES=0 python iqaScrach.py --list-dir='../sci_scripts/siqad-scripts-all/' --pro=0 --resume='../models/siqad-all/checkpoint_latest.pkl' --dataset='IQA'
+
+CUDA_VISIBLE_DEVICES=0 python iqaScrach.py --list-dir='../sci_scripts/scid-scripts-all/' --pro=0 --resume='../models/scid-all/checkpoint_latest.pkl' --dataset='SCID' --n-dtype=46
