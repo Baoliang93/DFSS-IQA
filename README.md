@@ -9,13 +9,13 @@ Code for "Deep Feature Statistics Mapping for Generalized Screen Content Image Q
 # Running
 * Data Prepare
 - [x] Download the SCID and SIQAD datasets into the path: `./DFSS-IQA/datasets/`
-- [x] We provide the pretrained checkpoints [here](https://mega.nz/folder/iDxH3R6a#WF25kk1XD30fhlZeSPJzDA). You can download it and put the included  files into the path: `"./DFSS-IQA/DFSS_Release/models/"`. 
+- [x] We provide the pre-trained checkpoints [here](https://mega.nz/folder/iDxH3R6a#WF25kk1XD30fhlZeSPJzDA). You can download it and put the included  files into the path: `"./DFSS-IQA/DFSS_Release/models/"`. 
 
 * Train: 
   - For Intra-dataset:
    -  SIQAD: `python iqaScrach.py --list-dir='../sci_scripts/siqad-scripts-6-2-2/' --pro=split_id  --resume='../models/siqad/checkpoint_latest.pkl' --dataset='IQA'`
    -  SCID:  `python python iqaScrach.py --list-dir='../sci_scripts/scid-scripts-6-2-2/' --pro=split_id  --resume='../models/scid/checkpoint_latest.pkl' --dataset='SCID' --n-dtype=46`
-      - split_id: '0' to '9'
+      - split_id: 0-9
 
   - For Cross-dataset:
    -  SIQAD: `python iqaScrach.py --list-dir='../sci_scripts/siqad-scripts-all/' --pro=0 --resume='../models/siqad-all/checkpoint_latest.pkl' --dataset='IQA'`
@@ -24,5 +24,5 @@ Code for "Deep Feature Statistics Mapping for Generalized Screen Content Image Q
 * Test:  
   - Intra-dataset: `python iqaIntraTest.py`
   - Cross-dataset: `python iqaCrossTest.py`
-  - Demo: `demo.py`
+  - Demo: `python demo.py`
 
