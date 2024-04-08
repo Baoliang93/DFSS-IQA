@@ -9,22 +9,20 @@ Code for "Deep Feature Statistics Mapping for Generalized Screen Content Image Q
 # Running
 * Data Prepare
 - [x] Download the SCID and SIQAD datasets into the path: `./DFSS-IQA/datasets/`
-- [x] We provide the pretrained checkpoints [here](https://mega.nz/folder/iDxH3R6a#WF25kk1XD30fhlZeSPJzDA). You can download it and put the included  files into the path: `"./DFSS-IQA/DFSS_Release/models"`. 
+- [x] We provide the pretrained checkpoints [here](https://mega.nz/folder/iDxH3R6a#WF25kk1XD30fhlZeSPJzDA). You can download it and put the included  files into the path: `"./DFSS-IQA/DFSS_Release/models/"`. 
 
 * Train: 
-  - For NI:  
-    `python ./FPR/FPR_IQA/FPR_SCI/src/iqaScrach.py --list-dir='../scripts/dataset_name/' --resume='../models/model_files/checkpoint_latest.pkl' --pro=split_id --dataset='dataloader_name'`  
-      -    dataset_name: "tid2013", "databaserelease2", "CSIQ", or "kadid10k"  
-      -    model_files: "tid2013", "live", "csiq", or "kadid"
-      - dataloader_name: "IQA" (for live and csiq  datasets), "TID2013", or "KADID"  
+  - For Intra-dataset:
+   -  SIQAD: `python iqaScrach.py --list-dir='../sci_scripts/siqad-scripts-6-2-2/' --pro=split_id  --resume='../models/siqad/checkpoint_latest.pkl' --dataset='IQA'`
+   -  SCID:  `python python iqaScrach.py --list-dir='../sci_scripts/scid-scripts-6-2-2/' --pro=split_id  --resume='../models/scid/checkpoint_latest.pkl' --dataset='SCID' --n-dtype=46`
       - split_id: '0' to '9'
-  - For SCI:   
-      -  SIQAD: `python ./FPR/FPR_IQA/FPR_SCI/src/iqaScrach.py  --pro=split_id`    
-      -  SCID: `python ./FPR/FPR_IQA/FPR_SCI/src/scid-iqaScrach.py  --pro=split_id`   
+
+  - For Cross-dataset:
+   -  SIQAD: `python iqaScrach.py --list-dir='../sci_scripts/siqad-scripts-all/' --pro=0 --resume='../models/siqad-all/checkpoint_latest.pkl' --dataset='IQA'`
+   -  SCID:  `python iqaScrach.py --list-dir='../sci_scripts/scid-scripts-all/' --pro=0 --resume='../models/scid-all/checkpoint_latest.pkl' --dataset='SCID' --n-dtype=46`
       
 * Test:  
-  - For NI:   
-  `python ./FPR/FPR_IQA/FPR_SCI/src/iqaTest.py --list-dir='../scripts/dataset_name/' --resume='../models/model_files/model_best.pkl' --pro=split_id  --dataset='dataloader_name'`  
-   - For SCI:   
-      -  SIQAD: `python ./FPR/FPR_IQA/FPR_SCI/src/iqaTest.py  --pro=split_id`    
-      -  SCID: `python ./FPR/FPR_IQA/FPR_SCI/src/scid-iqaTest.py  --pro=split_id`
+  - Intra-dataset: `python iqaIntraTest.py`
+  - Cross-dataset: `python iqaCrossTest.py`
+  - Demo: `demo.py`
+
