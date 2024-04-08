@@ -9,7 +9,7 @@ Code for "Deep Feature Statistics Mapping for Generalized Screen Content Image Q
 # Running
 * Data Prepare
 - [x] Download the SCID and SIQAD datasets into the path: `./DFSS-IQA/datasets/`
-- [x] We provide the pre-trained checkpoints [here](https://mega.nz/folder/iDxH3R6a#WF25kk1XD30fhlZeSPJzDA). You can download it and put the included  files into the path: `"./DFSS-IQA/DFSS_Release/models/"`. 
+- [x] We provide the pre-trained checkpoints [here](https://mega.nz/folder/3aBEjYCL#AoE23fKfc_Iw-PPQDXGpxA). You can download it and put the included  files into the path: `"./DFSS-IQA/DFSS_Release/models/"`. 
 
 * Train: 
   - For Intra-dataset:
